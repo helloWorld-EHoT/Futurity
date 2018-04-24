@@ -1,0 +1,14 @@
+.wrapper {
+  background-color: #CCCCCC;
+  width: 100vh;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: hidden;
+  futurity-cell {
+    width: calc(100% / 32);
+    height: calc(100% / 32);
+    position: relative;
+    }
+  }

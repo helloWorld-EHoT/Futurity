@@ -1,0 +1,20 @@
+<!--FIELD-->
+
+<div class="field-wrapper">
+  <div class="cell"
+       *ngFor="let cell of field.cells"
+       (click)="onTeleport($event.target.attributes)"
+
+       [class.wall]="cell.wall"
+       [class.ground]="cell.ground"
+       [class.movWall]="cell.movWall"
+       [class.teleport]="cell.teleport"
+       [class.exit]="cell.exit"
+
+       [attr.x]="cell.positionX"
+       [attr.y]="cell.positionY">
+    <futurity-player [section]="cell"
+                     [position]="player"
+                     *ngIf="player.x == cell.positionX && player.y == cell.positionY"></futurity-player>
+  </div>
+</div>

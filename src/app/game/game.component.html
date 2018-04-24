@@ -1,0 +1,14 @@
+<!--GAME-->
+
+<p>Level: {{level}}</p>
+<p>Teleports: {{teleport}}</p>
+
+
+<div class="wrapper" *ngIf="field">
+  <futurity-field [field]="field" [player]="player" [teleport]="teleport"></futurity-field>
+
+  <futurity-controls></futurity-controls>
+</div>
+
+
+<!--<router-outlet></router-outlet>-->

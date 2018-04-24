@@ -1,0 +1,13 @@
+
+
+
+
+
+<div class="cell"
+     [ngClass]="cell.role"
+     [attr.x]="cell.x"
+     [attr.y]="cell.y"
+     (click)="onClick(cell)">
+  {{cell.x}}
+  {{cell.y}}
+</div>

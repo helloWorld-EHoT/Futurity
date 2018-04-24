@@ -1,0 +1,55 @@
+$trans-in: none;
+$trans-out: all 1s ease-in-out;
+
+.field-wrapper {
+  width:            calc(100vh - 100px);
+  height:           calc(100vh - 100px);
+  background-color: #AB8B60;
+  display:          flex;
+  flex-wrap:        wrap;
+  overflow:         hidden;
+
+  .cell {
+    width:           calc(100% / 16);
+    height:          calc(100% / 16);
+    color:           #9C9C9C;
+    font-size:       10px;
+    text-align:      center;
+
+    cursor:          pointer;
+    display:         flex;
+    justify-content: center;
+    align-items:     center;
+    flex-wrap:       wrap;
+    position:        relative;
+    transition:      $trans-out;
+    &.wall {
+      background-color: #382D24;
+      box-shadow:       2px 2px 8px #191311;
+      border-right:     4px solid #191311;
+      border-bottom:    4px solid #191311;
+      top:              -4px;
+      left:             -4px;
+      }
+    &.ground {
+      background-color: transparent;
+      }
+    &.teleport {
+      background-color: #2479A7;
+      border-radius:    50%;
+      }
+    &.movWall {
+      background-color: #7E9090;
+      }
+    &.exit {
+      background-color: #000000;
+      box-shadow:       0 0 12px #000000;
+      }
+    p {
+      padding: 0;
+      margin:  0;
+      display: block;
+      width:   100%;
+      }
+    }
+  }
