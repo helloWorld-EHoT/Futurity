@@ -37,7 +37,7 @@ export class FieldComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.mapGen.getMap().subscribe();
+    // this.map = this.mapGen.getMap().unsubscribe();
   }
 
 

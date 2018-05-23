@@ -28,13 +28,14 @@ export class MapGeneratorService {
 
 
   constructor(private http: Http) {
+    this.getMap();
   }
 
   getMap() {
     return this.http.get(this.getString).subscribe(response => {
       console.log(response.json());
       this.template = response.json();
-      return this.generateMap();
+      this.map = this.generateMap();
     });
   }
 
