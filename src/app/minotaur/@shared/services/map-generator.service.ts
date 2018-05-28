@@ -32,11 +32,16 @@ export class MapGeneratorService {
   }
 
   getMap() {
-    return this.http.get(this.getString).subscribe(response => {
-      console.log(response.json());
-      this.template = response.json();
-      this.map = this.generateMap();
-    });
+    return this.http.get(this.getString)
+      // .subscribe(response => {
+      //   console.log(response.json());
+      //   this.template = response.json();
+      //   return this.map = this.generateMap();
+      // });
+  }
+
+  setTempMap(map) {
+    this.template = map;
   }
 
   generateMap() {
@@ -48,8 +53,8 @@ export class MapGeneratorService {
       this.flipGeneration(cellY);
     }
     this.doubleFlipGeneration();
-    console.log(this.tempMap);
     return this.tempMap;
+
   }
 
   flipGeneration(y: number) {
@@ -58,7 +63,6 @@ export class MapGeneratorService {
       this.tempMap.push(this.roleGenerator(x, y, this.template[y][cellX]));
       x++;
     }
-    // this.tempMap = [];
   }
 
   doubleFlipGeneration() {
@@ -66,20 +70,18 @@ export class MapGeneratorService {
     for (let cellY = this.template.length - 1; cellY >= 0; cellY--) {
       for (let cellX = 0; cellX < this.template[cellY].length; cellX++) {
         this.tempMap.push(this.roleGenerator(cellX, y, this.template[cellY][cellX]));
-
       }
+      this.tripleFlipGeneration(y, cellY); /// -
       y++;
-      this.tripleFlipGeneration(cellY); /// -
     }
   }
 
-  tripleFlipGeneration(y: number) {
+  tripleFlipGeneration(Y: number, y: number) {
     let x = this.template[y].length;
-    let Y = this.template.length;
+    // let Y = this.template.length;
     for (let cellX = this.template[y].length - 1; cellX >= 0; cellX--) {
       this.tempMap.push(this.roleGenerator(x, Y, this.template[y][cellX]));
       x++;
-      Y++;
     }
   }
 
@@ -137,6 +139,5 @@ export class MapGeneratorService {
         };
     }
   }
-
 
 }

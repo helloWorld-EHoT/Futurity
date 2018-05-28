@@ -1,13 +1,10 @@
-
-
-
-
-
 <div class="cell"
      [ngClass]="cell.role"
      [attr.x]="cell.x"
      [attr.y]="cell.y"
-     (click)="onClick(cell)">
-  {{cell.x}}
-  {{cell.y}}
+      (click)="log(cell)">
+    <div *ngIf="cell.x === players[0].x && cell.y === players[0].y" class="player player_1"></div>
+    <div *ngIf="cell.x === players[1].x && cell.y === players[1].y" class="player player_2"></div>
+    <div *ngIf="cell.x === players[2].x && cell.y === players[2].y" class="player player_3"></div>
+    <div *ngIf="cell.x === players[3].x && cell.y === players[3].y" class="player player_4"></div>
 </div>

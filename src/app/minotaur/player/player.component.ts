@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Cell, Player } from "../@shared/models/field.model";
+import { TurnService } from "../@shared/services/turn.service";
 
 @Component({
   selector: 'futurity-player',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayerComponent implements OnInit {
 
-  constructor() { }
+  @Input() cell: Cell;
+  @Input() player: Player;
+
+  constructor(private turn: TurnService) {
+  }
 
   ngOnInit() {
   }

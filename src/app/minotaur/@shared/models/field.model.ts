@@ -16,3 +16,20 @@ export class Cell {
   dropable: boolean = false;
   passable: boolean = false;
 }
+
+export class Player {
+  id: number;
+  x: number;
+  y: number;
+  steps: number;
+}
+
+export class State {
+  id: number;
+  position: Positions;
+}
+
+export class Positions {
+  x: number;
+  y: number;
+}
